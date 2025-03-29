@@ -7,7 +7,8 @@ https://www.gloriouseggroll.tv/how-to-get-out-of-wine-dependency-hell/
 mf-install.sh
 
 # No sound
-No sound ->paru -S lib32-alsa-plugins lib32-libpulse lib32-openal
+//No sound ->paru -S lib32-alsa-plugins lib32-libpulse lib32-openal
+pulseaudio-alsa -> for sound in games on wine
 
 
 # Specific games
