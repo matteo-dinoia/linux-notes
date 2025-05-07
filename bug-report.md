@@ -1,21 +1,29 @@
 # BUG
-1. preview of line in okular is messed up
-2. 24h format for sddm not respected
-3. sddm virtualkeyboard do nothing
-4. changing tablet setting doesn't apply up until replugging
-5. tablet keep aspect ratio does nothing 
-6. logging show movement of the virtual desktop
-7. touchpad on OSD
-8. sddm cursor
-9. kmenu editor doesn't actually delete files
-10. kemu editor modification make it impossible for the file to be deleted when uninstalling and so reinstalling cause old setting to be still there
-11. Laggy behaviour in krunner reordering
-12. custom ordering not followed for bookmark
+1. logging in show movement of the virtual desktop
+2. kmenu editor doesn't actually delete files + modification make it impossible for the file to be deleted when uninstalling and so reinstalling cause old setting to be still there
 
+# Tablet
+1. changing tablet setting doesn't apply up until replugging
+2. tablet keep aspect ratio does nothing 
+3. focus not taken by gtk(?) app
 
-# xournalpp
-1. focus not took by app (gtk only - xournalpp only)
-2. doesn't use portal for file picker when asked
+# System settings
+1. "Laggy" behaviour in krunner reordering (system setting) (also new)
+2. recent page is draggable (also new)
+
+# Fleet
+1. backend downloaded after not during -> and are in cache????
+
+# Install
+1. it doens't update internet status while installing
+2. preview of where windows is snap make it crash
+3. crash random during custom partitioning
+
+# Arch
+1. audio volume are reset
+
+# My
+Asus gpu set command is borked
 
 
 # Build command

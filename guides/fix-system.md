@@ -44,3 +44,8 @@ sudo mv /usr/share/xsessions/plasma.desktop /usr/share/xsessions/plasma.desktop.
 
 # No backlight
 * no backlight -> acpi_backlight=native in /boot/loader/entries/arch.conf
+
+# No shutdown during hybernation
+Found the solution by uncommenting in `/etc/systemd/sleep.conf`:
+```HibernateMode=shutdown ```
+And add resume to hooks
