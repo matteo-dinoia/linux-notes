@@ -1,17 +1,15 @@
 # TPM
-use sbctl (watch arch-wiki)
+use sbctl (see arch-wiki)
 
 
-# IBERNAZIONE
+# HYBERNATION
 https://rusty-electron.github.io/blog/setting-up-hibernation-in-arch-linux.html
 
 * Create swap and add to fstab
-* Copy UUID
-* add in systemd boot resume=UUID=<UUID-copied>
 * add resume to HOOKS in /etc/mkinitcpio.conf
+* Uncommenting in `/etc/systemd/sleep.conf`: `HibernateMode=shutdown `
 * sudo mkinitcpio -P
 * restart
-
 
 # SETTING UP SYSTEMD-BOOT
 https://www.addictivetips.com/ubuntu-linux-tips/set-up-systemd-boot-on-arch-linux/
@@ -32,3 +30,6 @@ file /boot/loader/loader.conf
     console-mode max
     editor no
 ```
+
+# CACHYOS REPO
+See https://wiki.cachyos.org/cachyos_repositories/how_to_add_cachyos_repo/

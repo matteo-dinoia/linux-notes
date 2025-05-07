@@ -10,5 +10,3 @@ then set the `/etc/locale.conf`
 ```bash
 LANG=en_US.UTF-8
 ```
-**! It is case sensitive and require exact match !**
-If it is still broken change setting in KDE

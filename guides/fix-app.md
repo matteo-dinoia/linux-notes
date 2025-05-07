@@ -1,27 +1,21 @@
 # Missing dependencies
-1. **sddm theming missing** `sudo pacman -S sddm-kcm`
-2. **missing google account in settings** `sudo pacman -S kaccounts-providers kio-gdrive`
-3. **missing man** `sudo pacman -S man-db man-pages`
-4. **missing dolphin pdf preview** `sudo pacman -S kdegraphics-thumbnailers` -> F12
-5. **blurry gtk apps** `sudo pacman -S xdg-desktop-portal-gtk`
-6. **font fuck ms** `sudo paru -S ms-font-ttf` (aur) 
-* uso bc al posto di calc
-* dosfstool for mkfs.fat
-* no icon in timezone -> install noto-fonts-emoji
-* nmtui for setting wifi easier
-* wrong cursor theming in plasma 5 app -> use plasma5-integration
-* ntfs-3g for ntfs and exfat-utils for exfat
-* no cube -> paru -S qt6-quick3d
-* downgrade to downgrade packages
+* **sddm theming missing** `sudo pacman -S sddm-kcm`
+* **missing google account in settings** `sudo pacman -S kaccounts-providers kio-gdrive`
+* **missing man** `sudo pacman -S man-db man-pages`
+* **missing dolphin pdf preview** `sudo pacman -S kdegraphics-thumbnailers` -> F12
+* **font microsoft for compat** `sudo paru -S ms-font-ttf` (aur) 
+* **manipulating mkfs.fat**: `sudo pacman -S dosfstool`
+* **mainpulating nfts and exfat**: `sudo pacman -s ntfs-3g exfat-utils`
+* **no icon in timezone** -> `sudo pacman -S noto-fonts-emoji`
+* **no cube in kde** -> `sudo pacamn -S qt6-quick3d`
 
-
-
-# TOO MUCH OPTION IN TOUCHPAD (NOT EVEN WORKING)
-remove package synaptics
+## TOOL TO KNOW
+* uso **bc** al posto di calc
+* **nmtui** for setting wifi easier
+* **downgrade** to downgrade packages
 
 
 # SCREENSHOT
-* Use command in the costum shortcut: ``` spectacle -brenc ```
 * clipboard->config->general->non-text-selection->"Only when explecetly copied"
 
 

@@ -10,3 +10,4 @@ unlock_time = 300
 
 sudo chmod 700 /bin/faillock
 // cannot use faillock anymore
+// this is not enought, will be reset

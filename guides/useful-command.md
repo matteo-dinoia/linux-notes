@@ -45,7 +45,14 @@ pdftk input.pdf cat 2-4 output out1.pdf
 * mutool poster -x 2 -y 2 input.pdf output.pdf
 * convert -quality 100 -density 300 a.pdf +repage -crop 2x2@  +repage b.pdf
 
-# Git
+# GIT
 ## Git filter
 install `git-filter-repo` then use as:
 git filter-repo --path FOLDER_TO_REMOVE  --invert-paths
+
+# PACMAN
+## Files
+`pacman -Fy/-F file/-Fx $expr` for getting package containg file
+Also see rosetta pacman.
+## Excluding packages
+Excluding packages is achieved by prefixing a number or range of numbers with a caret (^).

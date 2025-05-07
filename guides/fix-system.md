@@ -1,4 +1,7 @@
-# Missing dependencies
+# USEFUL PAGES
+Cool page for kde https://wiki.archlinux.org/title/KDE
+
+# MISSING DEPENDENCIES
 1. **bluetooth not connecting** `sudo pacman -S pipewire-alsa`
 2. **missing japanese** `sudo pacman -S adobe-source-han-sans-jp-fonts`
 3. **asking password for wifi password each time**: sudo pacman -S kwallet-pam
@@ -16,7 +19,7 @@ systemctl --user enable --now pipewire-pulse.service
 sudo pacman -S linux --overwrite="*"
 
 
-# KDE FILE PICKER
+# KDE FILE PICKER (PORTAL)
 add to ~/.profile
 ```export GTK_USE_PORTAL=1```
 
@@ -33,7 +36,7 @@ sudo rm -f /var/lib/pacman/db.lck
 disktest
 
 
-# TO CHECK
+# WATCHDOG
 /etc/sysctl.d/disable_watchdog.conf      kernel.nmi_watchdog = 0
 /etc/sysctl.d/dirty.conf                vm.dirty_writeback_centisecs = 6000
 
@@ -45,7 +48,4 @@ sudo mv /usr/share/xsessions/plasma.desktop /usr/share/xsessions/plasma.desktop.
 # No backlight
 * no backlight -> acpi_backlight=native in /boot/loader/entries/arch.conf
 
-# No shutdown during hybernation
-Found the solution by uncommenting in `/etc/systemd/sleep.conf`:
-```HibernateMode=shutdown ```
-And add resume to hooks
+
