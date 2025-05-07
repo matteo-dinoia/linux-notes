@@ -34,7 +34,7 @@ They must be enabled in the settings
 
 
 # FOR LATEX INSTALLATION
-install texinfo texlive-basic texlive-bin texlive-langenglish texlive-langitalian texlive-latex texlive-latexextra texlive-latexrecommended texlive-pictures
+install texlive-basic texlive-langenglish texlive-langitalian texlive-latex texlive-latexextra texlive-latexrecommended texlive-pictures
 
 
 # DATABASE

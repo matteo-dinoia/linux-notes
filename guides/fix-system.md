@@ -1,6 +1,8 @@
 # Missing dependencies
 1. **bluetooth not connecting** `sudo pacman -S pipewire-alsa`
 2. **missing japanese** `sudo pacman -S adobe-source-han-sans-jp-fonts`
+3. **asking password for wifi password each time**: sudo pacman -S kwallet-pam
+    * rm -rf ~/.local/share/kwalletd/*  ~/.config/kwalletrc
 
 
 # INSTALLING PIPEWIRE INSTEAD OF PULSE (USEFUL IF FORGET VOLUME)
