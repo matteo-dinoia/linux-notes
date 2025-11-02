@@ -2,8 +2,6 @@
 
 ## Preparation for install
 ``` Bash
-loadkeys it
-
 nano /etc/pacman.conf
 # uncomment parallel download
 # uncomment color

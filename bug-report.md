@@ -1,30 +1,27 @@
 # BUG
-1. logging in show movement of the virtual desktop
-2. kmenu editor doesn't actually delete files + modification make it impossible for the file to be deleted when uninstalling and so reinstalling cause old setting to be still there
+* logging in show movement of the virtual desktop
+* recent & file search & color page are draggable
+* difficult to distinguish active tab in yakuake (expecially when only 2 tabs)
+* SDDM apply kde settings doesn't apply keyboard preference
+* different app between krunner and middle click 
+* too small default text for monospace
+* change command in shortcut does nothing as apply cannot be selected
+* cannot paste image copied with spectacle -brnc but -brc work
+* flashing when making a screenshot with spectacle (if content updated while doing screenshot)
+
+# AMD
+* Random freeze
 
 # Tablet
-1. changing tablet setting doesn't apply up until replugging
-2. tablet keep aspect ratio does nothing 
-3. focus not taken by gtk(?) app
+* pixel on bottom (bottom-left and bottom-right) doesn't tile (if using some other projection)
+* when plugged with pen hover, hover is not initially set
+* Doesn't register first click and so (Xournal).
+* loading app icon is not on tablet cursor
 
-# System settings
-1. "Laggy" behaviour in krunner reordering (system setting) (also new)
-2. recent page is draggable (also new)
-
-# Fleet
-1. backend downloaded after not during -> and are in cache????
-
-# Install
-1. it doens't update internet status while installing
-2. preview of where windows is snap make it crash
-3. crash random during custom partitioning
-
-# Arch
-1. audio volume are reset
-
-# My
-Asus gpu set command is borked
-
+# Calamaris install
+* Take too long to launch
+* it doesn't update internet status while installing
+* crash random during custom partitioning (if double click on edit, create, ... button)
 
 # Build command
 kde-builder --pretend plasma-workspace systemsettings spectacle kate yakuake dolphin konsole -! krdp packagekit-qt discover

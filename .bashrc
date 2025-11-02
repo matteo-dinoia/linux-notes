@@ -30,26 +30,48 @@ __prompt_command() {
 
 
 #Alias
+alias cat='bat'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias paru-broken='paru -Qk 2>/dev/null | grep -v " 0 " | cut -d ":" -f 1'
-alias fix-broken='paru-broken | { res=""; while read -r p; do res="$p $res"; done; paru -S $res --overwrite="*" --noconfirm; }'
+alias paru-Qk='paru -Qk 2>/dev/null | grep -v " 0 " | cut -d ":" -f 1'
+alias paru-Qkk='paru -Qkk 2>/dev/null | grep -v " 0 " | cut -d ":" -f 1'
+alias paru-fix='paru-Qk | tee | { res=""; while read -r p; do res="$p $res"; done; paru -S $res --overwrite="*" --noconfirm; }'
 alias paru-rm-lock='sudo rm -f /var/lib/pacman/db.lck'
 alias paru-list-useless='paru -Runsc $(paru -Qdttq)'
 alias logout-kde='qdbus org.kde.Shutdown /Shutdown logout'
-#Changed app
-alias calc='bc'
-alias neofetch='fastfetch'
+alias ghost='gs'
+alias paru-locked='systemd-inhibit --who=paru --why="Running update/modify operation" paru'
+#alias sudo-arch-chroot-gui='sudo -E arch-chroot'
+
 ##Git alias
 alias gs='git status'
 alias gd='git diff'
-alias gl='git log'
+alias gf='git fetch --all && git prune'
+alias gch='git checkout'
+alias gll='git log'
+alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gb='git branch'
 alias gcom='git commit -m'
 alias gcomA='git add -A && git commit -m'
-alias gadd='git add'
 alias gpush='git push'
 alias gpull='git pull'
+alias gsw='git switch'
+alias greset='git reset'
+alias g='git'
+
+alias git-delete-branches-danger='git switch main && git branch | grep -v "* main" | xargs git branch -D '
+
+alias compress-pdf='ghostscript -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dBATCH -dColorImageResolution=150 -sOutputFile=output.pdf '
+alias compress-pdfs='for filename in *.pdf; do mv "${filename}" "${filename}.bak" &&  compress-pdf "${filename}.bak" && mv "output.pdf" "${filename}"; done'
+
+
+## School
+alias low-power-iot-new-tab="sudo docker exec -it docker_container /bin/bash"
+#alias cluster-connect="ssh -i ~/.ssh/cluster matteo.dinoia@baldo.disi.unitn.it"
+#alias cluster-copy="scp -i ~/.ssh/cluster matteo.dinoia@baldo.disi.unitn.it"
+#alias cluster-stop=" cluster-connect 'scancel -u \$USER && squeue -u \$USER'"
+#alias old-cluster-connect="ssh -i ~/.ssh/cluster matteo.dinoia@marzola.disi.unitn.it"
+
 
 #History setup
 HISTCONTROL=ignorespace:erasedups
@@ -67,13 +89,8 @@ complete -c man
 
 #Exports
 export EDITOR=nano
-export PATH=$PATH:~/.local/bin
+export PATH=$PATH:~/.local/bin:/opt/cuda/bin/
 export XDG_CONFIG_HOME=~/.config
 
 #Other
 bind TAB:menu-complete
-
-#Source (already source autocompletition)
-
-#Shortcut
-## Use Ctrl+u to delete up to a point

@@ -83,9 +83,6 @@ shift $((OPTIND-1))
 echo "$dryRun $biosMode $1 $2 $3"
 
 #ACTUAL SCRIPT
-printf "Cmd:\t loading italian keyboards\n"
-    loadkeys it
-
 printf "Cmd:\t syncing clock\n"
     errorChecking "timedatectl set-ntp true" "while syncing clock"
 

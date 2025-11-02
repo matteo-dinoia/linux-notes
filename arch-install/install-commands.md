@@ -1,7 +1,6 @@
 # Arch Linux install
 
 ## Start
-loadkeys it
 timedatectl set-ntp true
 
 ## Internet
@@ -26,8 +25,8 @@ reflector -l 20 -p https --sort rate --threads 64 --verbose --save /etc/pacman.d
 ### can be required -> pacman -S archlinux-keyring
 pacstrap /mnt base linux linux-firmware git base-devel networkmanager nano sudo
 
-## Chroot
-genfstab -U /mnt >> /mnt/etc/fstab
+## Chroot 
+genfstab -U /mnt | tee /mnt/etc/fstab
 ### Check if the file is ok
 arch-chroot /mnt
 
@@ -38,12 +37,12 @@ echo "arch" > /etc/hostname
 systemctl enable NetworkManager
 
 ## Locales
-echo -e "en_US.UTF-8 UTF-8\nit_IT.UTF-8 UTF-8" > /etc/locale.gen
+echo -e "en_US.UTF-8 UTF-8" > /etc/locale.gen
 locale-gen
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
-echo "KEYMAP=it" > /etc/vconsole.conf
-localectl set-x11-keymap --no-convert "it"
-localectl set-keymap it
+echo "KEYMAP=us" > /etc/vconsole.conf
+localectl set-x11-keymap --no-convert "us"
+localectl set-keymap us
 
 ## Users (matteo is <username>)
 useradd -m matteo 
@@ -53,7 +52,6 @@ EDITOR=nano visudo
 ### uncomment %wheel ALL=(ALL:ALL) ALL
 
 ## Boot manager
-mkinitcpio -P
 bootctl --path=/boot install
 blkid <LINUX-PART>
 
@@ -89,7 +87,6 @@ cd /tmp
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
-paru -S paru-bin
 
 ## Plasma install
 ### Add parallel download to /etc/pacman.conf
