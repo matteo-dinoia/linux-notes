@@ -8,15 +8,12 @@
 * change command in shortcut does nothing as apply cannot be selected
 * cannot paste image copied with spectacle -brnc but -brc work
 * flashing when making a screenshot with spectacle (if content updated while doing screenshot)
-
-# AMD
-* Random freeze
+* pasting cliboard image to file doesn't work
+* dolphin damaged long file name remaing (image )
 
 # Tablet
-* pixel on bottom (bottom-left and bottom-right) doesn't tile (if using some other projection)
-* when plugged with pen hover, hover is not initially set
-* Doesn't register first click and so (Xournal).
 * loading app icon is not on tablet cursor
+* Doesn't register first click and so on some app on hover enter maybe
 
 # Calamaris install
 * Take too long to launch
