@@ -27,7 +27,8 @@
 * **missing dolphin pdf preview** `sudo pacman -S kdegraphics-thumbnailers` -> F12
 * **font microsoft for compat** `sudo paru -S ms-font-ttf` (aur) 
 * **manipulating mkfs.fat**: `sudo pacman -S dosfstool`
-* **mainpulating nfts and exfat**: `sudo pacman -s ntfs-3g exfat-utils`
+* **mainpulating nfts and exfat**: `sudo pacman -S ntfs-3g exfat-utils`
+* **no nerd font**: `sudo pacman -S hack-nerd`
 
 
 

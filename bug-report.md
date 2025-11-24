@@ -5,11 +5,9 @@
 * SDDM apply kde settings doesn't apply keyboard preference
 * different app between krunner and middle click 
 * too small default text for monospace
-* change command in shortcut does nothing as apply cannot be selected
-* cannot paste image copied with spectacle -brnc but -brc work
-* flashing when making a screenshot with spectacle (if content updated while doing screenshot)
-* pasting cliboard image to file doesn't work
-* dolphin damaged long file name remaing (image )
+* cannot paste image copied with spectacle -brnc but -brc work (also -bnc does nothing copy nothing)
+* dolphin wrong damage when konsole panel is open
+
 
 # Tablet
 * loading app icon is not on tablet cursor
@@ -24,3 +22,8 @@
 kde-builder --pretend plasma-workspace systemsettings spectacle kate yakuake dolphin konsole -! krdp packagekit-qt discover
 
 EXTRA: --rebuild-failures --refresh-build
+
+## To organize
+lostfiles utils
+setup of XDG
+xdg-ninja
