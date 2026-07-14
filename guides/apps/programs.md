@@ -12,7 +12,6 @@ breeze-gtk
 btop
 dolphin
 firefox
-github-cli
 gwenview
 kate
 kde-gtk-config

@@ -19,18 +19,18 @@ https://www.addictivetips.com/ubuntu-linux-tips/set-up-systemd-boot-on-arch-linu
 
 file /boot/loader/entries/arch.conf
 ```
-    title Arch Linux
-    linux   /vmlinuz-linux
-    initrd  /initramfs-linux.img
-    options root=UUID=<insert_uuid> quiet loglevel=3 systemd.show_status=0 rw
+title Arch Linux
+linux   /vmlinuz-linux
+initrd  /initramfs-linux.img
+options root=UUID=<insert_uuid> quiet loglevel=3 systemd.show_status=0 rw
 ```
 
 file /boot/loader/loader.conf
 ```
-    default arch
-    timeout 4
-    console-mode max
-    editor no
+default arch.conf
+timeout 5
+console-mode max
+editor no
 ```
 
 

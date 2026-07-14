@@ -99,7 +99,7 @@ sudo systemctl enable --now sddm
 # After Install
 
 ## Micro fix
-paru -S man-db noto-fonts-emoji unrar kio-gdrive xwaylandvideobridge kdegraphics-thumbnailers pipewire-alsa
+paru -S man-db noto-fonts-emoji unrar kio-gdrive kdegraphics-thumbnailers pipewire-alsa
 sudo systemctl enable --now bluetooth
 
 ## App install

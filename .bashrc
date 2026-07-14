@@ -28,20 +28,20 @@ __prompt_command() {
     PS2="\[\033[1m\]\[\033[33m\]> \[\033[0m\]"
 }
 
+# Sudo styling
+export SUDO_PROMPT="$(tput bold)[sudo] Password:$(tput sgr0) "
 
 #Alias
-alias cat='bat'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias paru-Qk='paru -Qk 2>/dev/null | grep -v " 0 " | cut -d ":" -f 1'
-alias paru-Qkk='paru -Qkk 2>/dev/null | grep -v " 0 " | cut -d ":" -f 1'
-alias paru-fix='paru-Qk | tee | { res=""; while read -r p; do res="$p $res"; done; paru -S $res --overwrite="*" --noconfirm; }'
+alias paru-fix='paru-Qk | { res=""; while read -r p; do res="$p $res"; done; paru -S $res --overwrite="*" --noconfirm; }'
 alias paru-rm-lock='sudo rm -f /var/lib/pacman/db.lck'
 alias paru-list-useless='paru -Runsc $(paru -Qdttq)'
 alias logout-kde='qdbus org.kde.Shutdown /Shutdown logout'
-alias ghost='gs'
+alias ghostscript='/usr/bin/gs'
 alias paru-locked='systemd-inhibit --who=paru --why="Running update/modify operation" paru'
-#alias sudo-arch-chroot-gui='sudo -E arch-chroot'
+alias fast-mirror="sudo reflector --threads 64 --save /etc/pacman.d/mirrorlist --protocol https --latest 200 --score 40 --fastest 20 --sort rate --country Italy,Germany,Finland,Belgium,Austria,France"
 
 ##Git alias
 alias gs='git status'
@@ -61,19 +61,15 @@ alias g='git'
 
 alias git-delete-branches-danger='git switch main && git branch | grep -v "* main" | xargs git branch -D '
 
+## Other aliases
 alias compress-pdf='ghostscript -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dBATCH -dColorImageResolution=150 -sOutputFile=output.pdf '
 alias compress-pdfs='for filename in *.pdf; do mv "${filename}" "${filename}.bak" &&  compress-pdf "${filename}.bak" && mv "output.pdf" "${filename}"; done'
 
 
 ## School
-alias low-power-iot-new-tab="sudo docker exec -it docker_container /bin/bash"
-#alias cluster-connect="ssh -i ~/.ssh/cluster matteo.dinoia@baldo.disi.unitn.it"
-#alias cluster-copy="scp -i ~/.ssh/cluster matteo.dinoia@baldo.disi.unitn.it"
-#alias cluster-stop=" cluster-connect 'scancel -u \$USER && squeue -u \$USER'"
-#alias old-cluster-connect="ssh -i ~/.ssh/cluster matteo.dinoia@marzola.disi.unitn.it"
-
 
 #History setup
+export HISTFILE="${XDG_STATE_HOME}"/bash_history
 HISTCONTROL=ignorespace:erasedups
 HISTTIMEFORMAT="%F %T "
 HISTSIZE=2000
@@ -86,11 +82,15 @@ bind '"\e[B": history-search-forward'
 #Extra autocomplete
 complete -cf sudo paru pacman
 complete -c man
+complete -cf doas
+complete -F _command doas
+complete -F _command sudo
 
 #Exports
 export EDITOR=nano
-export PATH=$PATH:~/.local/bin:/opt/cuda/bin/
-export XDG_CONFIG_HOME=~/.config
 
 #Other
 bind TAB:menu-complete
+
+
+

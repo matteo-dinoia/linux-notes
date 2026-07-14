@@ -37,3 +37,6 @@ Install nvidia-prime and use as:
 ```bash
 prime-run <program-to-run>
 ```
+
+## Cardwire
+https://bbs.archlinux.org/viewtopic.php?id=314016

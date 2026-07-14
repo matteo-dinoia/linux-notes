@@ -17,7 +17,11 @@ sudo reflector --threads 64 --save /etc/pacman.d/mirrorlist --protocol https --l
 
 ## Profile on AC to quiet
 sudo nano /etc/asusd/asusd.ron
-``` change_throttle_policy_on_ac: false ```
+``` change_throttle_policy_on_ac: true ```
+``` change_throttle_policy_on_bat: true ```
+and then
+``` asusctl profile -a Quiet ```
+``` asusctl profile -b Quiet ```
 also edit to prevent problem to
 ``` disable_nvidia_powerd_on_battery: false```
 
